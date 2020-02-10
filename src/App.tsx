@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { View } from 'react-native';
 
-export default (): React.ReactElement => {
+export default (): ReactElement => {
   return (
     <View />
   );
