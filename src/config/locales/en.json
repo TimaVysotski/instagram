@@ -1,0 +1,9 @@
+{
+  "appName": "Instagram",
+  "button": {
+    "signIn": "Sign In"
+  },
+  "placeholder": {
+    "account": "Create new account"
+  }
+}
