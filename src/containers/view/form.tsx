@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { View } from 'react-native';
 import styled from 'styled-components';
 
-interface IAuthForm {
+interface AuthFormProps {
   children?: Array<ReactElement>;
 }
 
@@ -16,7 +16,7 @@ const StyledView = styled(View)`
   padding-left: 50px;
 `;
 
-export const AuthForm = (({ children }: IAuthForm): ReactElement => (
+export const AuthForm = (({ children }: AuthFormProps): ReactElement => (
   <StyledView>
     {children}
   </StyledView>

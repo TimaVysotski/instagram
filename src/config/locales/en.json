@@ -4,6 +4,6 @@
     "signIn": "Sign In"
   },
   "placeholder": {
-    "account": "Create new account"
+    "newAccount": "Create new account"
   }
 }

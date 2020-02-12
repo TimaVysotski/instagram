@@ -12,7 +12,7 @@ const Auth = (): ReactElement => {
       <Content>
         <AuthForm>
           <AuthImage />
-          <SecondaryButton text={i18n.t('placeholder.account')} />
+          <SecondaryButton text={i18n.t('placeholder.newAccount')} />
           <Button text={i18n.t('button.signIn')} />
         </AuthForm>
       </Content>
