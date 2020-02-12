@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
-import { View } from 'react-native';
+import Navigation from './containers/navigation';
 
 export default (): ReactElement => {
   return (
-    <View />
+    <Navigation />
   );
 };
