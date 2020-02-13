@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { Text, View } from 'react-native';
 import styled from 'styled-components';
-import { DEAFAULT_VALUE } from '../../constants/appConstants';
+import DEAFAULT_VALUE from '../../constants/appConstants';
 import colors from '../../theme/colors';
 import sizes from '../../theme/sizes';
 
@@ -31,9 +31,11 @@ const StyledText = styled(Text)`
   font-weight: ${({ fontWeight }: StyledTextProps): string => fontWeight || 'normal'};
 `;
 
-export const TabBar = ((): ReactElement => (
+const TabBar = (): ReactElement => (
   <StyledTabBarView maxHeight={`${sizes.screenHeight / 10}px`}>
     <StyledText>{DEAFAULT_VALUE.FROM}</StyledText>
-    <StyledText fontWeight={"bold"}>{DEAFAULT_VALUE.DEVELOPER}</StyledText>
+    <StyledText fontWeight="bold">{DEAFAULT_VALUE.DEVELOPER}</StyledText>
   </StyledTabBarView>
-));
+);
+
+export default TabBar;

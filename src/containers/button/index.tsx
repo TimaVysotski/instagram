@@ -36,14 +36,14 @@ const ButtonText = styled(Text)`
   color: ${({ color }: ButtonTextProps): string => color || colors.default};
 `;
 
-export const Button = (({ onPress, text }: ButtonProps): ReactElement => (
+export const Button = ({ onPress, text }: ButtonProps): ReactElement => (
   <TouchebleOpacity onPress={onPress}>
     <ButtonText style={{ color: colors.link }}>{text}</ButtonText>
   </TouchebleOpacity>
-));
+);
 
-export const SecondaryButton = (({ onPress, text }: ButtonProps): ReactElement => (
+export const SecondaryButton = ({ onPress, text }: ButtonProps): ReactElement => (
   <StyledButton onPress={onPress}>
     <ButtonText style={{ color: colors.white }}>{text}</ButtonText>
-  </StyledButton >
-));
+  </StyledButton>
+);

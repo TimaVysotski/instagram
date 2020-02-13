@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { Image } from 'react-native';
-import InstagramImage from '../../../assets/images/instagram.png';
 import styled from 'styled-components';
+import InstagramImage from '../../../assets/images/instagram.png';
 import sizes from '../../theme/sizes';
 
 interface ImageProps {
@@ -23,6 +23,8 @@ const StyledImage = styled(Image)`
   backgroundColor: blue;
 `;
 
-export const AppImage = (({ imageWidth, imageHeight }: ImageProps): ReactElement => (
+const AppImage = ({ imageWidth, imageHeight }: ImageProps): ReactElement => (
   <StyledImage imageWidth={imageWidth} imageHeight={imageHeight} source={InstagramImage} />
-));
+);
+
+export default AppImage;

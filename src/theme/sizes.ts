@@ -20,6 +20,6 @@ const sizes: SizesIterface = {
   baseTabBarHeight: 90,
   screenHeight: height,
   screenWidth: width,
-}
+};
 
 export default sizes;

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import sizes from '../../theme/sizes';
 
 interface FormProps {
-  children?: Array<ReactElement>;
+  children?: ReactElement[];
   height?: number;
   color?: string;
 }
@@ -34,14 +34,18 @@ const StyledFormView = styled(View)`
   backgroundColor: ${({ backgroundColor }: StyledFormViewProps): string => backgroundColor || 'red'};
 `;
 
-export const ContainerForm = (({ children }: FormProps): ReactElement => (
+export const ContainerForm = ({ children }: FormProps): ReactElement => (
   <StyledView pt={`${(sizes.screenHeight / 10) * 1.4} `}>
     {children}
   </StyledView>
-));
+);
 
-export const PropsForm = (({ children, height, color }: FormProps): ReactElement => (
+export const PropsForm = ({ children, height, color }: FormProps): ReactElement => (
   <StyledFormView maxHeight={height} backgroundColor={color}>
     {children}
   </StyledFormView>
-));
+);
+
+export const InputForm = (): ReactElement => (
+  <View />
+);

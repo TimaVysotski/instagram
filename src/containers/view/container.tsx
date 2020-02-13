@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import styled from 'styled-components';
 
 interface ContainerProps {
-  children?: Array<React.ReactElement>;
+  children?: React.ReactElement[];
 }
 
 interface ContentProps {
-  children?: Array<React.ReactElement>;
+  children?: React.ReactElement[];
 }
 
 interface SingleContenProps {
@@ -23,20 +23,20 @@ const StyledView = styled(View)`
   justify-content: ${({ justifyContent }: StyledViewProps): string => justifyContent || 'center'};
 `;
 
-export const SingleContent = (({ children }: SingleContenProps): ReactElement => (
+export const SingleContent = ({ children }: SingleContenProps): ReactElement => (
   <StyledView>
     {children}
   </StyledView>
-));
+);
 
-export const Content = (({ children }: ContentProps): ReactElement => (
+export const Content = ({ children }: ContentProps): ReactElement => (
   <StyledView>
     {children}
   </StyledView>
-));
+);
 
-export const Container = (({ children }: ContainerProps): ReactElement => (
+export const Container = ({ children }: ContainerProps): ReactElement => (
   <StyledView>
     {children}
   </StyledView>
-));
+);
