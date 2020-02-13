@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { GestureResponderEvent, TouchableOpacity, Text, Image } from 'react-native';
+import { GestureResponderEvent, TouchableOpacity, Text } from 'react-native';
 import styled from 'styled-components';
 import colors from '../../theme/colors';
 import sizes from '../../theme/sizes';
@@ -44,26 +44,26 @@ const StyledTouchebleOpacity = styled(TouchableOpacity)`
 
 const StyledIconTouchebleOpacity = styled(TouchableOpacity)`
   background-color: white;
-  height: ${ sizes.baseButtonHeight};
+  height: ${sizes.baseButtonHeight};
   align-items: center;
   justify-content: center;
 `;
 
 const StyledButton = styled(TouchableOpacity)`
-  background-color: ${ colors.link};
+  background-color: ${colors.link};
   min-height: 60px;
   max-height: 80px;
-  width: ${ ({ buttonWidth }: StyledButtonProps): number => buttonWidth || 100}%;
-  border-radius: ${ sizes.baseBorderRadius};
+  width: ${({ buttonWidth }: StyledButtonProps): number => buttonWidth || 100}%;
+  border-radius: ${sizes.baseBorderRadius};
   align-items: center;
   justify-content: center;
 `;
 
 const ButtonText = styled(Text)`
   font-style: normal;
-  font-weight: ${ ({ fontWeight }: ButtonTextProps): string => fontWeight || 'normal'};
-  font-size: ${ ({ fontSize }: ButtonTextProps): string => fontSize || sizes.baseButtonFontSize};
-  color: ${ ({ color }: ButtonTextProps): string => color || colors.default};
+  font-weight: ${({ fontWeight }: ButtonTextProps): string => fontWeight || 'normal'};
+  font-size: ${({ fontSize }: ButtonTextProps): string => fontSize || sizes.baseButtonFontSize};
+  color: ${({ color }: ButtonTextProps): string => color || colors.default};
 `;
 
 export const LinkButton = ({ onPress, text, alignSelf, fontSize, fontWeight, mt, mb }: ButtonProps): ReactElement => (
@@ -72,7 +72,7 @@ export const LinkButton = ({ onPress, text, alignSelf, fontSize, fontWeight, mt,
   </StyledTouchebleOpacity>
 );
 
-export const IconLinkButton = ({ onPress, text, icon }: ButtonProps): ReactElement => (
+export const IconLinkButton = ({ onPress, text }: ButtonProps): ReactElement => (
   <StyledIconTouchebleOpacity onPress={onPress}>
     <ButtonText color={colors.link}>{text}</ButtonText>
   </StyledIconTouchebleOpacity>

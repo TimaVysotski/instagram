@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { View, TextInput, Text } from 'react-native';
+import { View, TextInput } from 'react-native';
 import styled from 'styled-components';
 import sizes from '../../theme/sizes';
 import colors from '../../theme/colors';
@@ -73,7 +73,7 @@ export const PropsForm = ({ children, height, color, justifyContent, width }: Fo
 );
 
 export const InputForm = ({ placeholder }: TextInputProps): ReactElement => (
-  <StyledTextInputView >
+  <StyledTextInputView>
     <StyledTextInput placeholder={placeholder} />
-  </StyledTextInputView >
+  </StyledTextInputView>
 );

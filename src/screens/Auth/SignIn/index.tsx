@@ -12,10 +12,10 @@ const SignIn = (): ReactElement => (
     <SingleContent>
       <ContainerForm>
         <AppImage imageWidth={50} />
-        <PropsForm height={(sizes.screenHeight / 10) * 4} width={90} justifyContent={"flex-start"}>
+        <PropsForm height={(sizes.screenHeight / 10) * 4} width={90} justifyContent="flex-start">
           <InputForm placeholder={i18n.t('placeholder.login')} />
           <InputForm placeholder={i18n.t('placeholder.password')} />
-          <LinkButton text={i18n.t('button.forgotPassword')} alignSelf={'flex-end'} fontSize={'16px'} mt={20} mb={20} />
+          <LinkButton text={i18n.t('button.forgotPassword')} alignSelf="flex-end" fontSize="16px" mt={20} mb={20} />
           <Button text={i18n.t('button.signIn')} />
         </PropsForm>
         <PropsForm height={(sizes.screenHeight / 10) * 2} color="green" />

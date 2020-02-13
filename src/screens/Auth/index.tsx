@@ -12,7 +12,7 @@ const Auth = (): ReactElement => (
       <PropsForm>
         <AppImage />
         <Button text={i18n.t('placeholder.newAccount')} buttonWidth={80} />
-        <LinkButton text={i18n.t('button.signIn')} fontWeight={"bold"} />
+        <LinkButton text={i18n.t('button.signIn')} fontWeight="bold" />
       </PropsForm>
     </SingleContent>
     <TabBar />
