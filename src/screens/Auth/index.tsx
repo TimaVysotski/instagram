@@ -1,21 +1,21 @@
 import React, { ReactElement } from 'react';
-import { Container, Content } from '../../containers/view/container';
+import { Container, SingleContent } from '../../containers/view/container';
 import { TabBar } from '../../containers/tabBar';
 import { Button, SecondaryButton } from '../../containers/button';
-import { AuthForm } from '../../containers/view/form';
-import { AuthImage } from '../../containers/view/image';
+import { PropsForm } from '../../containers/view/form';
+import { AppImage } from '../../containers/view/image';
 import i18n from '../../config/i18n';
 
 const Auth = (): ReactElement => {
   return (
     <Container>
-      <Content>
-        <AuthForm>
-          <AuthImage />
+      <SingleContent>
+        <PropsForm>
+          <AppImage />
           <SecondaryButton text={i18n.t('placeholder.newAccount')} />
           <Button text={i18n.t('button.signIn')} />
-        </AuthForm>
-      </Content>
+        </PropsForm>
+      </SingleContent>
       <TabBar />
     </Container>
   );

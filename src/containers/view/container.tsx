@@ -7,6 +7,10 @@ interface ContainerProps {
 }
 
 interface ContentProps {
+  children?: Array<React.ReactElement>;
+}
+
+interface SingleContenProps {
   children?: ReactElement;
 }
 
@@ -18,6 +22,12 @@ const StyledView = styled(View)`
   flex: 1;
   justify-content: ${({ justifyContent }: StyledViewProps): string => justifyContent || 'center'};
 `;
+
+export const SingleContent = (({ children }: SingleContenProps): ReactElement => (
+  <StyledView>
+    {children}
+  </StyledView>
+));
 
 export const Content = (({ children }: ContentProps): ReactElement => (
   <StyledView>

@@ -2,14 +2,27 @@ import React, { ReactElement } from 'react';
 import { Image } from 'react-native';
 import InstagramImage from '../../../assets/images/instagram.png';
 import styled from 'styled-components';
+import sizes from '../../theme/sizes';
 
+interface ImageProps {
+  imageWidth?: number;
+  imageHeight?: number;
+}
+
+interface StyledImageProps {
+  imageWidth?: number;
+  imageHeight?: number;
+}
 
 const StyledImage = styled(Image)`
   flex: 1;
-  width: 60%;
+  width: ${({ imageWidth }: StyledImageProps): number => imageWidth || 60}%;
   resizeMode: contain;
+  align-self: center;
+  max-height: ${({ imageHeight }: StyledImageProps): number => imageHeight || ((sizes.screenHeight / 10) * 1.5)}px;
+  backgroundColor: blue;
 `;
 
-export const AuthImage = ((): ReactElement => (
-  <StyledImage source={InstagramImage} />
+export const AppImage = (({ imageWidth, imageHeight }: ImageProps): ReactElement => (
+  <StyledImage imageWidth={imageWidth} imageHeight={imageHeight} source={InstagramImage} />
 ));

@@ -1,8 +1,14 @@
 import React, { ReactElement } from 'react';
-import { View, Text } from 'react-native';
+import { Text, View } from 'react-native';
 import styled from 'styled-components';
-import colors from '../../theme/colors';
 import { DEAFAULT_VALUE } from '../../constants/appConstants';
+import colors from '../../theme/colors';
+import sizes from '../../theme/sizes';
+
+interface StyledTabBarViewProps {
+  borderColor?: string;
+  maxHeight?: string;
+}
 
 interface StyledTextProps {
   fontWeight?: string;
@@ -10,13 +16,11 @@ interface StyledTextProps {
 
 const StyledTabBarView = styled(View)`
   flex: 1;
-  min-height: 60px;
-  max-height: 90px;
+  max-height: ${({ maxHeight }: StyledTabBarViewProps): string => maxHeight || `${sizes.baseTabBarHeight}px`};
   align-items: center;
   justify-content: center;
   border-top-width: 1px;
-  border-color: ${colors.lightGrey}
-  font-weight: ${({ fontWeight }: StyledTextProps): string => fontWeight || 'normal'};
+  border-color: ${({ borderColor }: StyledTabBarViewProps): string => borderColor || `${colors.lightGrey}`};
 `;
 
 const StyledText = styled(Text)`
@@ -24,11 +28,12 @@ const StyledText = styled(Text)`
   letter-spacing: 3px;
   color: ${colors.grey};
   font-size: 16px;
+  font-weight: ${({ fontWeight }: StyledTextProps): string => fontWeight || 'normal'};
 `;
 
 export const TabBar = ((): ReactElement => (
-  <StyledTabBarView>
+  <StyledTabBarView maxHeight={`${sizes.screenHeight / 10}px`}>
     <StyledText>{DEAFAULT_VALUE.FROM}</StyledText>
-    <StyledText style={{ fontWeight: "bold" }}>{DEAFAULT_VALUE.DEVELOPER}</StyledText>
+    <StyledText fontWeight={"bold"}>{DEAFAULT_VALUE.DEVELOPER}</StyledText>
   </StyledTabBarView>
 ));
