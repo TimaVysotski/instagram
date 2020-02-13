@@ -3,9 +3,9 @@ import { Dimensions } from 'react-native';
 const { height, width } = Dimensions.get('window');
 
 interface SizesIterface {
-  baseButtonHeight?: string;
-  baseButtonFontSize?: string;
-  baseBorderRadius?: string;
+  baseButtonHeight: string;
+  baseButtonFontSize: string;
+  baseBorderRadius: string;
   baseMaxHeight: number;
   baseTabBarHeight: number;
   screenHeight: number;
@@ -15,7 +15,7 @@ interface SizesIterface {
 const sizes: SizesIterface = {
   baseButtonHeight: '50px',
   baseButtonFontSize: '18px',
-  baseBorderRadius: '5px',
+  baseBorderRadius: '7px',
   baseMaxHeight: 100,
   baseTabBarHeight: 90,
   screenHeight: height,

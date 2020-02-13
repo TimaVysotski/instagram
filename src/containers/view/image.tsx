@@ -20,7 +20,6 @@ const StyledImage = styled(Image)`
   resizeMode: contain;
   align-self: center;
   max-height: ${({ imageHeight }: StyledImageProps): number => imageHeight || ((sizes.screenHeight / 10) * 1.5)}px;
-  backgroundColor: blue;
 `;
 
 const AppImage = ({ imageWidth, imageHeight }: ImageProps): ReactElement => (

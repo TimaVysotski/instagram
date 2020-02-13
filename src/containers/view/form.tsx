@@ -1,12 +1,19 @@
 import React, { ReactElement } from 'react';
-import { View } from 'react-native';
+import { View, TextInput, Text } from 'react-native';
 import styled from 'styled-components';
 import sizes from '../../theme/sizes';
+import colors from '../../theme/colors';
 
 interface FormProps {
   children?: ReactElement[];
   height?: number;
+  width?: number;
   color?: string;
+  justifyContent?: string;
+}
+
+interface TextInputProps {
+  placeholder?: string;
 }
 
 interface StyledViewProps {
@@ -16,6 +23,8 @@ interface StyledViewProps {
 interface StyledFormViewProps {
   maxHeight?: number;
   backgroundColor?: string;
+  justifyContent?: string;
+  width?: number;
 }
 
 const StyledView = styled(View)`
@@ -26,12 +35,29 @@ const StyledView = styled(View)`
 const StyledFormView = styled(View)`
   flex: 1;
   max-height: ${({ maxHeight }: StyledFormViewProps): number => maxHeight || (sizes.screenHeight / 3)}px;
+  width: ${({ width }: StyledFormViewProps): number => width || 100}%;
+  align-self: center;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
-  padding-right: 50px;
-  padding-left: 50px;
-  backgroundColor: ${({ backgroundColor }: StyledFormViewProps): string => backgroundColor || 'red'};
+  justify-content: ${({ justifyContent }: StyledFormViewProps): string => justifyContent || 'center'};
+  backgroundColor: ${({ backgroundColor }: StyledFormViewProps): string => backgroundColor || 'white'};
+`;
+
+const StyledTextInputView = styled(View)`
+  min-height: 60px;
+  max-height: 80px;
+  width: 100%;
+  margin-top: 20px;
+  backgroundColor: ${colors.inputBackground};
+  border-color: ${colors.grey};
+  border-radius: ${sizes.baseBorderRadius};
+  border-width: 1.5px;
+`;
+
+const StyledTextInput = styled(TextInput)`
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 10px;
 `;
 
 export const ContainerForm = ({ children }: FormProps): ReactElement => (
@@ -40,12 +66,14 @@ export const ContainerForm = ({ children }: FormProps): ReactElement => (
   </StyledView>
 );
 
-export const PropsForm = ({ children, height, color }: FormProps): ReactElement => (
-  <StyledFormView maxHeight={height} backgroundColor={color}>
+export const PropsForm = ({ children, height, color, justifyContent, width }: FormProps): ReactElement => (
+  <StyledFormView maxHeight={height} backgroundColor={color} justifyContent={justifyContent} width={width}>
     {children}
   </StyledFormView>
 );
 
-export const InputForm = (): ReactElement => (
-  <View />
+export const InputForm = ({ placeholder }: TextInputProps): ReactElement => (
+  <StyledTextInputView >
+    <StyledTextInput placeholder={placeholder} />
+  </StyledTextInputView >
 );

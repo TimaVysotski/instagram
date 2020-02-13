@@ -4,6 +4,7 @@ interface AppColors {
   white: string;
   lightGrey: string;
   grey: string;
+  inputBackground: string;
 }
 
 const colors: AppColors = {
@@ -12,6 +13,7 @@ const colors: AppColors = {
   white: 'white',
   lightGrey: '#e7e7e7',
   grey: '#acacac',
+  inputBackground: '#fafafa',
 };
 
 export default colors;

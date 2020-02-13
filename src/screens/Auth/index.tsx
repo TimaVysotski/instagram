@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import i18n from '../../config/i18n';
-import { Button, SecondaryButton } from '../../containers/button';
+import { LinkButton, Button } from '../../containers/button';
 import TabBar from '../../containers/tabBar';
 import { Container, SingleContent } from '../../containers/view/container';
 import { PropsForm } from '../../containers/view/form';
@@ -11,8 +11,8 @@ const Auth = (): ReactElement => (
     <SingleContent>
       <PropsForm>
         <AppImage />
-        <SecondaryButton text={i18n.t('placeholder.newAccount')} />
-        <Button text={i18n.t('button.signIn')} />
+        <Button text={i18n.t('placeholder.newAccount')} buttonWidth={80} />
+        <LinkButton text={i18n.t('button.signIn')} fontWeight={"bold"} />
       </PropsForm>
     </SingleContent>
     <TabBar />
