@@ -16,7 +16,7 @@ interface StyledViewProps {
 }
 
 interface FormProps {
-  children?: ReactElement[];
+  children?: ReactElement[] | ReactElement;
   height?: number;
   width?: number;
   color?: string;

@@ -24,9 +24,11 @@ const StyledImage = styled(Image)`
 `;
 
 const StyledIcon = styled(Image)`
-  width: 16px;
-  height: 16px;
+  flex: 1;
+  max-width: 22px;
+  max-height: 22px;
   resizeMode: contain;
+  margin-right: 10px;
 `;
 
 export const AppImage = ({ imageWidth, imageHeight }: ImageProps): ReactElement => (

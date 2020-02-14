@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { GestureResponderEvent, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Icon } from '../dataDisplay';
 import styled from 'styled-components';
 import colors from '../../../theme/colors';
 import sizes from '../../../theme/sizes';
@@ -9,10 +10,24 @@ interface ButtonProps {
   text?: string;
   icon?: string;
   alignSelf?: string;
+  justifyContent?: string;
+  linkHeight?: string;
   fontSize?: string;
   fontWeight?: string;
   buttonWidth?: number;
   buttonColor?: string;
+  mt?: number;
+  mb?: number;
+}
+
+interface TextInputProps {
+  placeholder?: string;
+}
+
+interface StyledLinkProps {
+  alignSelf?: string;
+  justifyContent?: string;
+  linkHeight?: string;
   mt?: number;
   mb?: number;
 }
@@ -22,30 +37,23 @@ interface StyledButtonProps {
   buttonColor?: string;
 }
 
-interface ButtonTextProps {
+interface StyledButtonTextProps {
   color?: string;
   fontSize?: string;
   fontWeight?: string;
 }
 
-interface StyledTouchebleOpacityProps {
-  alignSelf?: string;
-  mt?: number;
-  mb?: number;
-}
-
-interface TextInputProps {
-  placeholder?: string;
-}
-
-const StyledTouchebleOpacity = styled(TouchableOpacity)`
-  background-color: white;
-  height: ${sizes.baseButtonHeight};
-  align-self: ${({ alignSelf }: StyledTouchebleOpacityProps): string => alignSelf || 'center'};
+const StyledLink = styled(TouchableOpacity)`
+  height: ${({ linkHeight }: StyledLinkProps): string => linkHeight || `${sizes.baseButtonHeight}`};
+  align-self: ${({ alignSelf }: StyledLinkProps): string => alignSelf || 'center'};
   align-items: center;
   justify-content: center;
-  margin-top: ${({ mt }: StyledTouchebleOpacityProps): number => mt || 0}px;
-  margin-bottom: ${({ mb }: StyledTouchebleOpacityProps): number => mb || 0}px;
+  margin-top: ${({ mt }: StyledLinkProps): number => mt || 0}px;
+  margin-bottom: ${({ mb }: StyledLinkProps): number => mb || 0}px;
+`;
+
+const StyledIconLinkView = styled(View)`
+  flex-direction: row;
 `;
 
 const StyledButton = styled(TouchableOpacity)`
@@ -58,11 +66,11 @@ const StyledButton = styled(TouchableOpacity)`
   justify-content: center;
 `;
 
-const ButtonText = styled(Text)`
+const StyledButtonText = styled(Text)`
   font-style: normal;
-  font-weight: ${({ fontWeight }: ButtonTextProps): string => fontWeight || 'normal'};
-  font-size: ${({ fontSize }: ButtonTextProps): string => fontSize || sizes.baseButtonFontSize};
-  color: ${({ color }: ButtonTextProps): string => color || colors.default};
+  font-weight: ${({ fontWeight }: StyledButtonTextProps): string => fontWeight || 'normal'};
+  font-size: ${({ fontSize }: StyledButtonTextProps): string => fontSize || sizes.baseButtonFontSize};
+  color: ${({ color }: StyledButtonTextProps): string => color || colors.default};
 `;
 
 const StyledTextInputView = styled(View)`
@@ -82,15 +90,22 @@ const StyledTextInput = styled(TextInput)`
   padding-right: 10px;
 `;
 
-export const LinkButton = ({ onPress, text, alignSelf, fontSize, fontWeight, mt, mb }: ButtonProps): ReactElement => (
-  <StyledTouchebleOpacity onPress={onPress} alignSelf={alignSelf} mt={mt} mb={mb}>
-    <ButtonText color={colors.link} fontSize={fontSize} fontWeight={fontWeight}>{text}</ButtonText>
-  </StyledTouchebleOpacity>
+export const Link = ({ onPress, text, alignSelf, fontSize, fontWeight, mt, mb, justifyContent, linkHeight }: ButtonProps): ReactElement => (
+  <StyledLink onPress={onPress} alignSelf={alignSelf} justifyContent={justifyContent} linkHeight={linkHeight} mt={mt} mb={mb}>
+    <StyledButtonText color={colors.link} fontSize={fontSize} fontWeight={fontWeight}>{text}</StyledButtonText>
+  </StyledLink>
+);
+
+export const IconLink = ({ onPress, text, linkHeight, fontWeight }: ButtonProps): ReactElement => (
+  <StyledIconLinkView>
+    <Icon />
+    <Link text={text} onPress={onPress} linkHeight={linkHeight} fontWeight={fontWeight} />
+  </StyledIconLinkView>
 );
 
 export const Button = ({ onPress, text, buttonWidth, buttonColor }: ButtonProps): ReactElement => (
   <StyledButton buttonWidth={buttonWidth} buttonColor={buttonColor} onPress={onPress}>
-    <ButtonText style={{ color: colors.white }}>{text}</ButtonText>
+    <StyledButtonText style={{ color: colors.white }}>{text}</StyledButtonText>
   </StyledButton>
 );
 
