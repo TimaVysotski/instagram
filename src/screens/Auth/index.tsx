@@ -1,20 +1,19 @@
 import React, { ReactElement } from 'react';
 import i18n from '../../config/i18n';
-import { LinkButton, Button } from '../../containers/button';
-import TabBar from '../../containers/tabBar';
-import { Container, SingleContent } from '../../containers/view/container';
-import { PropsForm } from '../../containers/view/form';
-import AppImage from '../../containers/view/image';
+import { Button, LinkButton } from '../../containers/components/inputs';
+import { Container, Content, FormControl } from '../../containers/components/layout';
+import TabBar from '../../containers/components/surfaces';
+import { AppImage } from '../../containers/components/dataDisplay';
 
 const Auth = (): ReactElement => (
   <Container>
-    <SingleContent>
-      <PropsForm>
+    <Content>
+      <FormControl>
         <AppImage />
         <Button text={i18n.t('placeholder.newAccount')} buttonWidth={80} />
         <LinkButton text={i18n.t('button.signIn')} fontWeight="bold" />
-      </PropsForm>
-    </SingleContent>
+      </FormControl>
+    </Content>
     <TabBar />
   </Container>
 );

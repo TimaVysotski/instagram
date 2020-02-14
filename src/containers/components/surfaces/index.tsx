@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
 import { Text, View } from 'react-native';
 import styled from 'styled-components';
-import DEAFAULT_VALUE from '../../constants/appConstants';
-import colors from '../../theme/colors';
-import sizes from '../../theme/sizes';
+import DEAFAULT_VALUE from '../../../constants/appConstants';
+import colors from '../../../theme/colors';
+import sizes from '../../../theme/sizes';
 
 interface StyledTabBarViewProps {
   borderColor?: string;

@@ -2,7 +2,8 @@
   "appName": "Instagram",
   "button": {
     "signIn": "Sign In",
-    "forgotPassword": "Forgot your password?"
+    "forgotPassword": "Forgot your password?",
+    "facebookLogin": "Login using Facebook"
   },
   "placeholder": {
     "newAccount": "Create new account",

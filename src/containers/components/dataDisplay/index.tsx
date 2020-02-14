@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
 import { Image } from 'react-native';
 import styled from 'styled-components';
-import InstagramImage from '../../../assets/images/instagram.png';
-import sizes from '../../theme/sizes';
+import InstagramImage from '../../../../assets/images/instagram.png';
+import FacebookIcon from '../../../../assets/images/facebook.png';
+import sizes from '../../../theme/sizes';
 
 interface ImageProps {
   imageWidth?: number;
@@ -22,8 +23,16 @@ const StyledImage = styled(Image)`
   max-height: ${({ imageHeight }: StyledImageProps): number => imageHeight || ((sizes.screenHeight / 10) * 1.5)}px;
 `;
 
-const AppImage = ({ imageWidth, imageHeight }: ImageProps): ReactElement => (
+const StyledIcon = styled(Image)`
+  width: 16px;
+  height: 16px;
+  resizeMode: contain;
+`;
+
+export const AppImage = ({ imageWidth, imageHeight }: ImageProps): ReactElement => (
   <StyledImage imageWidth={imageWidth} imageHeight={imageHeight} source={InstagramImage} />
 );
 
-export default AppImage;
+export const Icon = (): ReactElement => (
+  <StyledIcon source={FacebookIcon} />
+);
