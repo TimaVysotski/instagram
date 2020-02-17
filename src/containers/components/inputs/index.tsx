@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { GestureResponderEvent, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { Icon } from '../dataDisplay';
 import styled from 'styled-components';
+import { Icon } from '../dataDisplay';
 import colors from '../../../theme/colors';
 import sizes from '../../../theme/sizes';
 

@@ -8,6 +8,9 @@
   "placeholder": {
     "newAccount": "Create new account",
     "login": "User name, number or email",
-    "password": "Password"
+    "password": "Password",
+    "repeatPassword": "Repeat password",
+    "email": "Enter your email",
+    "male": "Male/Female"
   }
 }

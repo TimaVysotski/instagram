@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { View, TextInput } from 'react-native';
+import { View } from 'react-native';
 import styled from 'styled-components';
 import sizes from '../../../theme/sizes';
 
