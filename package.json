@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "@types/jest": "25.1.2",
-    "@types/react-native": "0.61.12",
+    "@types/react-native": "^0.61.14",
     "@types/react-test-renderer": "16.9.2",
+    "eslint-config-prettier": "^6.10.0",
     "i18n-js": "3.5.1",
     "react": "16.9.0",
     "react-dom": "16.12.0",
@@ -33,7 +34,9 @@
     "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-json": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
     "jest": "^25.1.0",
@@ -42,5 +45,11 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "lint-staged": {
+    "*.js, *.ts, *.tsx": [
+      "eslint --ext .js,.jsx,.ts,.tsx ./",
+      "git add"
+    ]
   }
 }
