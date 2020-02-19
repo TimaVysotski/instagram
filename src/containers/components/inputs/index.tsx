@@ -2,8 +2,8 @@ import React, { ReactElement } from 'react';
 import { GestureResponderEvent, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from 'styled-components';
 import { Icon } from '../dataDisplay';
-import colors from '../../../theme/colors';
-import sizes from '../../../theme/sizes';
+import COLORS from '../../../theme/colors';
+import SIZES from '../../../theme/sizes';
 
 interface ButtonProps {
   onPress?: (event: GestureResponderEvent) => void;
@@ -44,7 +44,7 @@ interface StyledButtonTextProps {
 }
 
 const StyledLink = styled(TouchableOpacity)`
-  height: ${({ linkHeight }: StyledLinkProps): string => linkHeight || `${sizes.baseButtonHeight}`};
+  height: ${({ linkHeight }: StyledLinkProps): string => linkHeight || `${SIZES.baseButtonHeight}`};
   align-self: ${({ alignSelf }: StyledLinkProps): string => alignSelf || 'center'};
   align-items: center;
   justify-content: center;
@@ -57,11 +57,11 @@ const StyledIconLinkView = styled(View)`
 `;
 
 const StyledButton = styled(TouchableOpacity)`
-  background-color: ${({ buttonColor }: StyledButtonProps): string => buttonColor || colors.link};
+  background-color: ${({ buttonColor }: StyledButtonProps): string => buttonColor || COLORS.link};
   min-height: 60px;
   max-height: 80px;
   width: ${({ buttonWidth }: StyledButtonProps): number => buttonWidth || 100}%;
-  border-radius: ${sizes.baseBorderRadius};
+  border-radius: ${SIZES.baseBorderRadius};
   align-items: center;
   justify-content: center;
 `;
@@ -69,8 +69,8 @@ const StyledButton = styled(TouchableOpacity)`
 const StyledButtonText = styled(Text)`
   font-style: normal;
   font-weight: ${({ fontWeight }: StyledButtonTextProps): string => fontWeight || 'normal'};
-  font-size: ${({ fontSize }: StyledButtonTextProps): string => fontSize || sizes.baseButtonFontSize};
-  color: ${({ color }: StyledButtonTextProps): string => color || colors.default};
+  font-size: ${({ fontSize }: StyledButtonTextProps): string => fontSize || SIZES.baseButtonFontSize};
+  color: ${({ color }: StyledButtonTextProps): string => color || COLORS.default};
 `;
 
 const StyledTextInputView = styled(View)`
@@ -78,9 +78,9 @@ const StyledTextInputView = styled(View)`
   max-height: 80px;
   width: 100%;
   margin-top: 20px;
-  backgroundColor: ${colors.inputBackground};
-  border-color: ${colors.grey};
-  border-radius: ${sizes.baseBorderRadius};
+  backgroundColor: ${COLORS.inputBackground};
+  border-color: ${COLORS.grey};
+  border-radius: ${SIZES.baseBorderRadius};
   border-width: 1.5px;
 `;
 
@@ -92,7 +92,7 @@ const StyledTextInput = styled(TextInput)`
 
 export const Link = ({ onPress, text, alignSelf, fontSize, fontWeight, mt, mb, justifyContent, linkHeight }: ButtonProps): ReactElement => (
   <StyledLink onPress={onPress} alignSelf={alignSelf} justifyContent={justifyContent} linkHeight={linkHeight} mt={mt} mb={mb}>
-    <StyledButtonText color={colors.link} fontSize={fontSize} fontWeight={fontWeight}>{text}</StyledButtonText>
+    <StyledButtonText color={COLORS.link} fontSize={fontSize} fontWeight={fontWeight}>{text}</StyledButtonText>
   </StyledLink>
 );
 
@@ -105,7 +105,7 @@ export const IconLink = ({ onPress, text, linkHeight, fontWeight }: ButtonProps)
 
 export const Button = ({ onPress, text, buttonWidth, buttonColor }: ButtonProps): ReactElement => (
   <StyledButton buttonWidth={buttonWidth} buttonColor={buttonColor} onPress={onPress}>
-    <StyledButtonText style={{ color: colors.white }}>{text}</StyledButtonText>
+    <StyledButtonText style={{ color: COLORS.white }}>{text}</StyledButtonText>
   </StyledButton>
 );
 

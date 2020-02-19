@@ -1,13 +1,18 @@
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import SCREENS from '../../constants/routes';
 import Auth from '../../screens/Auth';
 import SignIn from '../../screens/Auth/SignIn';
 import SignUp from '../../screens/Auth/SignUp';
-import SCREENS from '../../constants/routes';
 
-const AppNavigator = createSwitchNavigator({
-  [SCREENS.SIGN_UP]: { screen: SignUp },
-  [SCREENS.SIGN_IN]: { screen: SignIn },
-  [SCREENS.AUTH]: { screen: Auth },
-});
+const Stack = createStackNavigator();
 
-export default createAppContainer(AppNavigator);
+const Navigation = () => (
+  <Stack.Navigator headerMode="none">
+    <Stack.Screen name={SCREENS.AUTH} component={Auth} />
+    <Stack.Screen name={SCREENS.SIGN_IN} component={SignIn} />
+    <Stack.Screen name={SCREENS.SIGN_UP} component={SignUp} />
+  </Stack.Navigator>
+);
+
+export default Navigation;

@@ -12,7 +12,7 @@ interface SizesIterface {
   screenWidth: number;
 }
 
-const sizes: SizesIterface = {
+const SIZES: SizesIterface = {
   baseButtonHeight: '50px',
   baseButtonFontSize: '18px',
   baseBorderRadius: '7px',
@@ -22,4 +22,4 @@ const sizes: SizesIterface = {
   screenWidth: width,
 };
 
-export default sizes;
+export default SIZES;
