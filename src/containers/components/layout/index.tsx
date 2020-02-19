@@ -1,14 +1,16 @@
 import React, { ReactElement } from 'react';
 import { View } from 'react-native';
 import styled from 'styled-components';
-import sizes from '../../../theme/sizes';
+import SIZES from '../../../theme/sizes';
 
 interface ContainerProps {
   children?: ReactElement[];
+  color?: string;
 }
 
 interface ContentProps {
   children?: ReactElement[] | ReactElement;
+  color?: string;
 }
 
 interface StyledViewProps {
@@ -27,6 +29,11 @@ interface StyledViewProps {
   pt?: string;
 }
 
+interface StyledContainerProps {
+  justifyContent?: string;
+  color?: string;
+}
+
 interface StyledFormViewProps {
   maxHeight?: number;
   backgroundColor?: string;
@@ -36,7 +43,8 @@ interface StyledFormViewProps {
 
 const StyledContainer = styled(View)`
   flex: 1;
-  justify-content: ${({ justifyContent }: StyledViewProps): string => justifyContent || 'center'};
+  justify-content: ${({ justifyContent }: StyledContainerProps): string => justifyContent || 'center'};
+  backgroundColor: ${({ color }: StyledContainerProps): string => color || 'white'};
 `;
 
 const StyledView = styled(View)`
@@ -46,7 +54,7 @@ const StyledView = styled(View)`
 
 const StyledFormView = styled(View)`
   flex: 1;
-  max-height: ${({ maxHeight }: StyledFormViewProps): number => maxHeight || (sizes.screenHeight / 3)}px;
+  max-height: ${({ maxHeight }: StyledFormViewProps): number => maxHeight || (SIZES.screenHeight / 3)}px;
   width: ${({ width }: StyledFormViewProps): number => width || 100}%;
   align-self: center;
   align-items: center;
@@ -55,20 +63,20 @@ const StyledFormView = styled(View)`
   backgroundColor: ${({ backgroundColor }: StyledFormViewProps): string => backgroundColor || 'white'};
 `;
 
-export const Content = ({ children }: ContentProps): ReactElement => (
-  <StyledContainer>
+export const Content = ({ children, color }: ContentProps): ReactElement => (
+  <StyledContainer color={color}>
     {children}
   </StyledContainer>
 );
 
-export const Container = ({ children }: ContainerProps): ReactElement => (
-  <StyledContainer>
+export const Container = ({ children, color }: ContainerProps): ReactElement => (
+  <StyledContainer color={color}>
     {children}
   </StyledContainer>
 );
 
 export const Box = ({ children }: FormProps): ReactElement => (
-  <StyledView pt={`${(sizes.screenHeight / 10) * 1.4} `}>
+  <StyledView pt={`${(SIZES.screenHeight / 10) * 1.4} `}>
     {children}
   </StyledView>
 );

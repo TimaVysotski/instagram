@@ -3,7 +3,7 @@ import { Image } from 'react-native';
 import styled from 'styled-components';
 import InstagramImage from '../../../../assets/images/instagram.png';
 import FacebookIcon from '../../../../assets/images/facebook.png';
-import sizes from '../../../theme/sizes';
+import SIZES from '../../../theme/sizes';
 
 interface ImageProps {
   imageWidth?: number;
@@ -20,7 +20,7 @@ const StyledImage = styled(Image)`
   width: ${({ imageWidth }: StyledImageProps): number => imageWidth || 60}%;
   resizeMode: contain;
   align-self: center;
-  max-height: ${({ imageHeight }: StyledImageProps): number => imageHeight || ((sizes.screenHeight / 10) * 1.5)}px;
+  max-height: ${({ imageHeight }: StyledImageProps): number => imageHeight || ((SIZES.screenHeight / 10) * 1.5)}px;
 `;
 
 const StyledIcon = styled(Image)`

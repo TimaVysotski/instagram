@@ -1,21 +1,21 @@
 interface AppColors {
   default: string;
   link: string;
-  unactiv: string;
+  unactive: string;
   white: string;
   lightGrey: string;
   grey: string;
   inputBackground: string;
 }
 
-const colors: AppColors = {
+const COLORS: AppColors = {
   default: '#000000',
   link: '#3897f1',
-  unactiv: '#9bcbf9',
+  unactive: '#9bcbf9',
   white: 'white',
   lightGrey: '#e7e7e7',
   grey: '#acacac',
   inputBackground: '#fafafa',
 };
 
-export default colors;
+export default COLORS;
