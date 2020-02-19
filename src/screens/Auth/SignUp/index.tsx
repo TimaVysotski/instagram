@@ -16,13 +16,13 @@ const SignUp = (): ReactElement => {
       <Content color={colors.background}>
         <Box>
           <AppImage imageWidth={50} />
-          <FormControl height={(SIZES.screenHeight / 10) * 6} width={90} justifyContent="flex-start" color={theme[mode]}>
+          <FormControl height={(SIZES.screenHeight / 10) * 6} width={90} justifyContent="flex-start" color={colors.background}>
             <TextField placeholder={i18n.t('placeholder.email')} />
             <TextField placeholder={i18n.t('placeholder.password')} />
             <TextField placeholder={i18n.t('placeholder.repeatPassword')} />
             <TextField placeholder={i18n.t('placeholder.male')} />
           </FormControl>
-          <FormControl height={(SIZES.screenHeight / 10) * 2} width={90} justifyContent="flex-start" color={theme[mode]}>
+          <FormControl height={(SIZES.screenHeight / 10) * 2} width={90} justifyContent="flex-start" color={colors.background}>
             <Button text={i18n.t('button.signIn')} buttonColor={COLORS.unactive} />
           </FormControl>
         </Box>
